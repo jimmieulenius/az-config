@@ -6,6 +6,7 @@
   "outputs": {
     "userConfig": {
       "value": {
+        "format": {},
         "placeholder": {
           "ORGANIZATION": {
             "$default": {
