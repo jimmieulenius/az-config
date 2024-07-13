@@ -6,17 +6,6 @@
   "outputs": {
     "userConfig": {
       "value": {
-        "format": {
-          "$default": {
-            "value": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
-          },
-          "deployment": {
-            "value": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
-          },
-          "subnet": {
-            "value": "{ENVIRONMENT}-{PROJECT}-{INSTANCE}[{-}{UNIQUE}]"
-          }
-        },
         "placeholder": {
           "ORGANIZATION": {
             "$default": {
