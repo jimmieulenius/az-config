@@ -5,76 +5,87 @@
   "resources": [],
   "outputs": {
     "userConfig": {
+      "type": "object",
       "value": {
         "format": {
-          "$default": {
-            "formatString": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
+          "$field": {
+            "setAction": "combine"
+          },
+          "default": {
+            "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
           },
           "deployment": {
-            "formatString": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
           },
           "subnet": {
             "formatString": "{ENVIRONMENT}{-}{PROJECT}{-}{INSTANCE}[{-}{UNIQUE}]"
           }
         },
-        "placeholder": {
+        "placeholders": {
           "ORGANIZATION": {
+            "$type": "lookup",
             "default": "draftit",
-            "allowedValues": {
+            "source": {
               "draftit": {
-                "abbreviation": "dra"
+                "value": "dra"
               }
             }
           },
           "ENVIRONMENT": {
-            "allowedValues": {
+            "$type": "lookup",
+            "$field": {
+              "setAction": "replace"
+            },
+            "source": {
               "stage": {
-                "abbreviation": "stg"
+                "value": "stg"
               },
               "prod": {
-                "abbreviation": "prd"
+                "value": "prd"
               }
             }
           },
           "PROJECT": {
+            "$type": "lookup",
             "default": "ju",
-            "allowedValues": {
+            "source": {
               "ju": {},
               "myFirstApp": {
-                "abbreviation": "mfa"
+                "value": "mfa"
               },
               "mySecondApp": {
-                "abbreviation": "msa"
+                "value": "msa"
               }
             }
           },
+          "$ref:PROJECT_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
           "SUBPROJECT": {
-            "allowedValues": {
+            "$type": "lookup",
+            "source": {
               "api": {
-                "abbreviation": "api"
+                "value": "api"
               },
               "client": {
-                "abbreviation": "clt"
+                "value": "clt"
               }
             }
           },
           "DEPLOYMENT_PHASE": {
-            "$unique": {
-              "length": 6,
-              "seed": "aaa"
-            }
+            "$type": "unique",
+            "length": 6,
+            "seed": "aaa"
           },
           "SUFFIX": {
-            "$instance": {
-              "maxValue": 999,
-              "padding": {
-                "totalLength": 3
-              }
+            "$type": "instance",
+            "maxValue": 999,
+            "padding": {
+              "totalLength": 3
             }
           }
         }
-      },
-      "type": "object"
+      }
     }
   }
 }
