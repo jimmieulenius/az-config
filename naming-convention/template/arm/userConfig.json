@@ -14,9 +14,6 @@
         },
         "deployment": {
           "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{UNIQUE}]"
-        },
-        "subnet": {
-          "formatString": "{ENVIRONMENT}{-}{PROJECT}{-}{INSTANCE}[{-}{UNIQUE}]"
         }
       },
       "placeholders": {
