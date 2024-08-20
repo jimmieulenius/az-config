@@ -36,10 +36,10 @@
         },
         "ORGANIZATION": {
           "$type": "lookup",
-          "default": "draftit",
+          "default": "myOrg",
           "source": {
-            "draftit": {
-              "value": "dra"
+            "myOrg": {
+              "value": "mo"
             }
           }
         },
