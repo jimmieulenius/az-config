@@ -1,79 +1,90 @@
 {
-  "format": {
-    "$field": {
-      "setAction": "combine"
-    },
-    "default": {
-      "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
-    },
-    "deployment": {
-      "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
-    },
-    "subnet": {
-      "formatString": "{ENVIRONMENT}{-}{PROJECT}{-}{INSTANCE}[{-}{UNIQUE}]"
-    }
-  },
-  "placeholders": {
-    "ORGANIZATION": {
-      "$type": "lookup",
-      "default": "draftit",
-      "source": {
-        "draftit": {
-          "value": "dra"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [],
+  "outputs": {
+    "userConfig": {
+      "format": {
+        "$field": {
+          "setAction": "combine"
+        },
+        "default": {
+          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
+        },
+        "deployment": {
+          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{UNIQUE}]"
+        },
+        "subnet": {
+          "formatString": "{ENVIRONMENT}{-}{PROJECT}{-}{INSTANCE}[{-}{UNIQUE}]"
         }
-      }
-    },
-    "ENVIRONMENT": {
-      "$type": "lookup",
-      "$field": {
-        "setAction": "replace"
       },
-      "source": {
-        "stage": {
-          "value": "stg"
+      "placeholders": {
+        "ENVIRONMENT": {
+          "$type": "lookup",
+          "$field": {
+            "setAction": "replace"
+          },
+          "source": {
+            "stage": {
+              "value": "s"
+            },
+            "prod": {
+              "value": "p"
+            }
+          }
         },
-        "prod": {
-          "value": "prd"
-        }
-      }
-    },
-    "PROJECT": {
-      "$type": "lookup",
-      "default": "ju",
-      "source": {
-        "ju": {},
-        "myFirstApp": {
-          "value": "mfa"
+        "ORGANIZATION": {
+          "$type": "lookup",
+          "default": "draftit",
+          "source": {
+            "draftit": {
+              "value": "dra"
+            }
+          }
         },
-        "mySecondApp": {
-          "value": "msa"
-        }
-      }
-    },
-    "$ref:PROJECT_INSTANCE": {
-      "path": "#/placeholders/INSTANCE"
-    },
-    "SUBPROJECT": {
-      "$type": "lookup",
-      "source": {
-        "api": {
-          "value": "api"
+        "PROJECT": {
+          "$type": "lookup",
+          "default": "ju",
+          "source": {
+            "ju": {},
+            "myFirstApp": {
+              "value": "mfa"
+            },
+            "mySecondApp": {
+              "value": "msa"
+            }
+          }
         },
-        "client": {
-          "value": "clt"
+        "$ref:PROJECT_INSTANCE": {
+          "path": "#/placeholders/INSTANCE"
+        },
+        "SUBPROJECT": {
+          "$type": "lookup",
+          "source": {
+            "api": {
+              "value": "api"
+            },
+            "client": {
+              "value": "clt"
+            }
+          }
+        },
+        "$ref:SUBPROJECT_INSTANCE": {
+          "path": "#/placeholders/INSTANCE"
+        },
+        "$ref:RESOURCE_INSTANCE": {
+          "path": "#/placeholders/INSTANCE"
+        },
+        "$ref:SUBRESOURCE_INSTANCE": {
+          "path": "#/placeholders/INSTANCE"
+        },
+        "VERSION": {
+          "$type": "text"
+        },
+        "DEPLOYMENT_PHASE": {
+          "$type": "text"
         }
-      }
-    },
-    "DEPLOYMENT_PHASE": {
-      "$type": "unique",
-      "length": 6,
-      "seed": "aaa"
-    },
-    "SUFFIX": {
-      "$type": "instance",
-      "maxValue": 999,
-      "padding": {
-        "totalLength": 3
       }
     }
   }
