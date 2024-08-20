@@ -10,10 +10,10 @@
           "setAction": "combine"
         },
         "default": {
-          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
+          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
         },
         "deployment": {
-          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{UNIQUE}]"
+          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{UNIQUE}]"
         }
       },
       "placeholders": {
