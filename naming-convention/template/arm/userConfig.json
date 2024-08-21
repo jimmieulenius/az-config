@@ -4,9 +4,9 @@
   "parameters": {},
   "resources": [],
   "outputs": {
-    "type": "Object",
-    "value": {
     "userConfig": {
+      "type": "object",
+      "value": {
       "format": {
         "$field": {
           "setAction": "combine"
