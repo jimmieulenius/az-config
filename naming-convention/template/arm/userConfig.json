@@ -12,10 +12,10 @@
           "setAction": "combine"
         },
         "default": {
-          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
+          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{FREE_TEXT}][{-}{UNIQUE}]"
         },
         "deployment": {
-          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{UNIQUE}]"
+          "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{FREE_TEXT}[{-}{UNIQUE}]"
         }
       },
       "placeholders": {
@@ -59,7 +59,7 @@
           "path": "#/placeholders/INSTANCE"
         },
         "SUBPROJECT": {
-          "$type": "lookup",
+          "$type": "text",
           "source": {
             "api": {
               "value": "api"
@@ -82,6 +82,9 @@
           "$type": "text"
         },
         "DEPLOYMENT_PHASE": {
+          "$type": "text"
+        },
+        "FREE_TEXT": {
           "$type": "text"
         }
       }
