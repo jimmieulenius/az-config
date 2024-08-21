@@ -4,6 +4,8 @@
   "parameters": {},
   "resources": [],
   "outputs": {
+    "type": "Object",
+    "value": {
     "userConfig": {
       "format": {
         "$field": {
@@ -83,6 +85,7 @@
           "$type": "text"
         }
       }
+    }
     }
   }
 }
