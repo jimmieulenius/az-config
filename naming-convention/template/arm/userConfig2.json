@@ -45,9 +45,6 @@
               "setAction": "replace"
             },
             "source": {
-              "dev": {
-                "value": "dev"
-              },
               "stage": {
                 "value": "stg"
               },
