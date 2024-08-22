@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [],
+  "outputs": {
+    "userConfig": {
+      "type": "object",
+      "value": {
+        "format": {
+          "$field": {
+            "setAction": "combine"
+          },
+          "default": {
+            "formatString": "{AREA}{-}{PROJECT}{-}{INTERFACE_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}][{-}{UNIQUE}]"
+          }
+        },
+        "placeholders": {
+          "AREA": {
+            "$type": "lookup",
+            "source": {
+              "integrationFlow": {
+                "value": "IF"
+              },
+              "odata": {
+                "value": "ODATA"
+              },
+              "rest": {
+                "value": "REST"
+              },
+              "soap": {
+                "value": "SOAP"
+              }
+            }
+          },
+          "PROJECT": {
+            "$type": "text"
+          },
+          "INTERFACE_NUMBER": {
+            "$type": "text"
+          },
+          "ENVIRONMENT": {
+            "$type": "lookup",
+            "$field": {
+              "setAction": "replace"
+            },
+            "source": {
+              "dev": {
+                "value": "dev"
+              }
+              "stage": {
+                "value": "stg"
+              },
+              "prod": {
+                "value": "prd"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
