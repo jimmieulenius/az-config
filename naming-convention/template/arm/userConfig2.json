@@ -48,11 +48,14 @@
               "dev": {
                 "value": "dev"
               },
-              "stage": {
-                "value": "stg"
+              "qas": {
+                "value": "qas"
               },
               "prod": {
-                "value": "prd"
+                "value": "run"
+              },
+              "run": {
+                "value": "run"
               }
             }
           }
