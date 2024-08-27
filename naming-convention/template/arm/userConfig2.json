@@ -12,7 +12,7 @@
             "setAction": "combine"
           },
           "default": {
-            "formatString": "{AREA}{-}{PROJECT}{-}{INTERFACE_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{RESOURCE_TYPE}[{-}{UNIQUE}]"
+            "formatString": "{AREA}{-}{PROJECT}{-}{INTERFACE_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
           }
         },
         "placeholders": {
@@ -48,8 +48,8 @@
               "dev": {
                 "value": "dev"
               },
-              "qas": {
-                "value": "qas"
+              "qua": {
+                "value": "qua"
               },
               "prod": {
                 "value": "run"
