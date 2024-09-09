@@ -48,8 +48,8 @@
               "dev": {
                 "value": "dev"
               },
-              "qua": {
-                "value": "qua"
+              "qas": {
+                "value": "qas"
               },
               "prod": {
                 "value": "run"
