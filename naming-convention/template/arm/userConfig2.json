@@ -12,15 +12,15 @@
             "setAction": "combine"
           },
           "default": {
-            "formatString": "{AREA}{-}{PROJECT}[{-}{SUBPROJECT}]{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
           },
           "integration": {
-            "formatString": "{AREA}{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+            "formatString": "{PROJECT}[{-}{SUBPROJECT}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
             "casing": "lower"
           }
         },
         "placeholders": {
-          "AREA": {
+          "PROJECT": {
             "$type": "lookup",
             "source": {
               "integrationFlow": {
@@ -36,9 +36,6 @@
                 "value": "SOAP"
               }
             }
-          },
-          "PROJECT": {
-            "$type": "text"
           },
           "SUBPROJECT": {
             "$type": "text"
@@ -56,16 +53,16 @@
             },
             "source": {
               "dev": {
-                "value": "dev"
+                "value": "d"
               },
               "qas": {
-                "value": "qas"
+                "value": "q"
               },
               "prod": {
-                "value": "run"
+                "value": "r"
               },
               "run": {
-                "value": "run"
+                "value": "r"
               }
             }
           }
