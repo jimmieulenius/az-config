@@ -15,7 +15,7 @@
             "formatString": "{AREA}{-}{PROJECT}[{-}{SUBPROJECT}]{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
           },
           "integration": {
-            "formatString": "if{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
+            "formatString": "{AREA}{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
           }
         },
         "placeholders": {
