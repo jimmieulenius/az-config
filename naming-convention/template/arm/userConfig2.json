@@ -15,7 +15,7 @@
             "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
           },
           "integration": {
-            "formatString": "{PROJECT}[{-}{SUBPROJECT}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+            "formatString": "{ENVIRONMENT}{-}{PROJECT}[{-}{SUBPROJECT}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
             "casing": "lower"
           }
         },
