@@ -13,6 +13,9 @@
           },
           "default": {
             "formatString": "{AREA}{-}{PROJECT}[{-}{SUBPROJECT}]{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
+          },
+          "integration": {
+            "formatString": "if{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}{-}{ENVIRONMENT}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
           }
         },
         "placeholders": {
@@ -38,6 +41,12 @@
           },
           "SUBPROJECT": {
             "$type": "text"
+          },
+          "INTEGRATION_GROUP": {
+            "$type": "text"
+          },
+          "INTEGRATION_NUMBER": {
+            "$type": "instance"
           },
           "ENVIRONMENT": {
             "$type": "lookup",
