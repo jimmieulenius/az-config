@@ -24,16 +24,16 @@
             "$type": "lookup",
             "source": {
               "integrationFlow": {
-                "value": "IF"
+                "value": "if"
               },
               "odata": {
-                "value": "ODATA"
+                "value": "odata"
               },
               "rest": {
-                "value": "REST"
+                "value": "rest"
               },
               "soap": {
-                "value": "SOAP"
+                "value": "soap"
               }
             }
           },
