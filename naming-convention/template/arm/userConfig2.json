@@ -46,7 +46,7 @@
             "$type": "text"
           },
           "INTEGRATION_NUMBER": {
-            "$type": "instance"
+            "$type": "text"
           },
           "ENVIRONMENT": {
             "$type": "lookup",
