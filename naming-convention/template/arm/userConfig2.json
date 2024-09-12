@@ -12,10 +12,10 @@
             "setAction": "combine"
           },
           "default": {
-            "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
           },
           "integration": {
-            "formatString": "{ENVIRONMENT}{-}{PROJECT}[{-}{SUBPROJECT}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+            "formatString": "{ENVIRONMENT}{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
             "casing": "lower"
           }
         },
@@ -37,8 +37,20 @@
               }
             }
           },
+          "$ref:PROJECT_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
           "SUBPROJECT": {
             "$type": "text"
+          },
+          "$ref:SUBPROJECT_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
+          "$ref:RESOURCE_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
+          "$ref:SUBRESOURCE_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
           },
           "INTEGRATION_GROUP": {
             "$type": "text"
