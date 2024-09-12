@@ -12,10 +12,10 @@
             "setAction": "combine"
           },
           "default": {
-            "formatString": "{ENVIRONMENT}[{-}{BUSINESS_UNIT}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}[{-}{BUSINESS_UNIT}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{SUBPROJECT_INSTANCE}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
           },
           "integration": {
-            "formatString": "{ENVIRONMENT}[{-}{BUSINESS_UNIT}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+            "formatString": "{ENVIRONMENT}[{-}{BUSINESS_UNIT}]{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{SUBPROJECT_INSTANCE}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
             "casing": "lower"
           }
         },
