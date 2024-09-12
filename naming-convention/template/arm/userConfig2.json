@@ -12,14 +12,26 @@
             "setAction": "combine"
           },
           "default": {
-            "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}[{-}{BUSINESS_UNIT}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
           },
           "integration": {
-            "formatString": "{ENVIRONMENT}{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+            "formatString": "{ENVIRONMENT}[{-}{BUSINESS_UNIT}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{SUBPROJECT_INSTANCE}]{-}{INTEGRATION_GROUP}{-}{INTEGRATION_NUMBER}[{-}{REGION}][{-}{INSTANCE}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
             "casing": "lower"
           }
         },
         "placeholders": {
+          "BUSINESS_UNIT": {
+            "$type": "lookup",
+            "default": "eonSweden",
+            "source": {
+              "eonSweden": {
+                "value": "esv"
+              },
+              "nordicIntegrationPlatform": {
+                "value": "nip"
+              }
+            }
+          },
           "PROJECT": {
             "$type": "lookup",
             "source": {
