@@ -1,0 +1,11 @@
+{
+  "component": {
+    "RESOURCE_TYPE": {
+      "$ref": "#default.component.RESOURCE_TYPE",
+      "source": {
+        "$ref": "#['default.component.RESOURCE_TYPE'].source",
+        "web/serverfarms": "plan"
+      }
+    }
+  }
+}
